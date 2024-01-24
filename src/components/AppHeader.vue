@@ -1,4 +1,7 @@
 <script>
+
+import { store } from '../store.js';
+
   export default {
     data() {
       return {
@@ -16,7 +19,7 @@
     </div>
     <form>
       <div>
-        <input type="text" placeholder="Movies, shows, titles">
+        <input v-model="store.search" type="text" placeholder="Movies, shows, titles">
       </div>
       <div>
         <button>

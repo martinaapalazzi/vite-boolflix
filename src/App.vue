@@ -25,7 +25,7 @@
       .get(this.store.APIMovies, {
         params: {
           api_key: this.store.APIKey,
-          query: 'fast'
+          query: this.store.search
         }
       })
       .then((response)=>
@@ -35,7 +35,7 @@
       .get(this.store.APISeries, {
         params: {
           api_key: this.store.APIKey,
-          query: 'fast'
+          query: this.store.searchTitles
         }
       })
       .then((response)=>
