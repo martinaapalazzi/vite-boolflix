@@ -11,7 +11,10 @@
             store
         };
     },
-    components: { MoviesApp, SeriesApp }
+    components: { 
+      MoviesApp, 
+      SeriesApp 
+    }
 }
 </script>
 

@@ -32,10 +32,10 @@ import { store } from '../store.js';
       })
       .then((response)=>{
         this.store.series = response.data.results
-        console.log(response.data.results)
+        console.log(this.store.series)
       })
       }
-    }
+    },
   }
 </script>
 
