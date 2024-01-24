@@ -19,7 +19,7 @@ export default {
 <template>
 
   <div>
-    <div v-for="(movie, index) in store.movies">
+    <div v-for="(movie, index) in store.movies" key="index">
       <span>
         Il film è {{ movie.title }}
       </span>
@@ -33,8 +33,9 @@ export default {
         Il voto per questo film è {{ movie.vote_average }}
       </span>
     </div>
-
   </div>
+  <br>
+  <br>
   
 </template>
 
