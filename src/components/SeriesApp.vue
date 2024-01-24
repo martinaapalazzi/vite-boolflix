@@ -32,6 +32,9 @@ export default {
       <span>
         Il voto per questo film è {{ serie.vote_average }}
       </span>
+      <span>
+        Il voto per questo film è {{ serie.vote_average }}
+      </span>
     </div>
   </div>
 
