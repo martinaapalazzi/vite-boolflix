@@ -10,9 +10,22 @@
 
 <template>
 
-  <h1>
-    HEADER 
-  </h1>
+  <div id="header">
+    <div class="logo">
+      Boolflix 
+    </div>
+    <form>
+      <div>
+        <input type="text" placeholder="Movies, shows, titles">
+      </div>
+      <div>
+        <button>
+          Search
+        </button>
+      </div>
+    </form>
+
+  </div>
   
 </template>
 

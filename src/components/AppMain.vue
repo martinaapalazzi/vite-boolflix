@@ -1,23 +1,25 @@
 <script>
 
   import axios from 'axios';
-  import SingleCard from './SingleCardApp.vue';
   import { store } from '../store.js';
+  import MoviesApp from './MoviesApp.vue';
+  import SeriesApp from './SeriesApp.vue';
 
   export default {
     data() {
-      return {
-        store
-      }
+        return {
+            store
+        };
     },
-  }
+    components: { MoviesApp, SeriesApp }
+}
 </script>
 
 <template>
 
-  <h3>
-    MAIN
-  </h3>
+  <MoviesApp />
+
+  <SeriesApp />
 
 
 </template>

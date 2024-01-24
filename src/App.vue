@@ -21,7 +21,25 @@
       
     },
     mounted() {
-      
+      axios
+      .get(this.store.APIMovies, {
+        params: {
+          api_key: this.store.APIKey,
+          query: 'fast'
+        }
+      })
+      .then((response)=>
+      console.log(response))
+
+      axios
+      .get(this.store.APISeries, {
+        params: {
+          api_key: this.store.APIKey,
+          query: 'fast'
+        }
+      })
+      .then((response)=>
+      console.log(response))
     },
   }
 </script>
