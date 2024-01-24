@@ -18,6 +18,8 @@ export default {
 
 <template>
 
+  <br>
+  <br>
   <div>
     <div v-for="(movie, index) in store.movies" key="index">
       <span>

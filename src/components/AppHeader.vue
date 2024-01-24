@@ -43,7 +43,7 @@ import { store } from '../store.js';
 
   <div id="header">
     <div class="logo">
-      Boolflix 
+      BOOLFLIX 
     </div>
     <div class="search-bar">
       <div>
