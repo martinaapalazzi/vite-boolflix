@@ -1,0 +1,34 @@
+@use "partials/reset.scss" as *;
+@use "partials/variables.scss" as *;
+@use "partials/mixins.scss" as *;
+
+// Import all of Bootstrap's CSS
+@import "bootstrap/scss/bootstrap";
+
+// GENERAL
+
+
+// HEADER STYLE 
+#header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+}
+
+
+// MAIN STYLE
+#main {
+    padding: 50px;
+    background-color: #D48F38;
+
+        .single-card {
+            background-color: #D48F38;
+            padding: 0;
+        }
+    }
+
+
+// FOOTER STYLE 
+
+
