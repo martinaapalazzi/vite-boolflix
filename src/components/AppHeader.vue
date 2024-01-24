@@ -1,13 +1,41 @@
 <script>
 
+import axios from 'axios';
 import { store } from '../store.js';
 
   export default {
     data() {
       return {
-        
+        store
       }
     },
+    methods: {
+      userSearch: function () {
+        axios
+        .get(this.store.APIMovies, {
+        params: {
+          api_key: this.store.APIKey,
+          query: this.store.search
+        }
+      })
+      .then((response)=> {
+        this.store.movies = response.data.results
+        console.log(this.store.movies)
+      })
+
+      axios
+      .get(this.store.APISeries, {
+        params: {
+          api_key: this.store.APIKey,
+          query: this.store.search
+        }
+      })
+      .then((response)=>{
+        this.store.series = response.data.results
+        console.log(response.data.results)
+      })
+      }
+    }
   }
 </script>
 
@@ -17,17 +45,16 @@ import { store } from '../store.js';
     <div class="logo">
       Boolflix 
     </div>
-    <form>
+    <div class="search-bar">
       <div>
-        <input v-model="store.search" type="text" placeholder="Movies, shows, titles">
+        <input @keyup.enter="userSearch()" v-model="store.search" type="text" placeholder="Movies, shows, titles">
       </div>
       <div>
-        <button>
+        <button @click="userSearch()">
           Search
         </button>
       </div>
-    </form>
-
+    </div>
   </div>
   
 </template>
