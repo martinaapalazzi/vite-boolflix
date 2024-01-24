@@ -1,10 +1,10 @@
 <script>
 
-  import AppHeader from "./components/AppHeader.vue"
-  import AppMain from "./components/AppMain.vue"
-  import AppFooter from "./components/AppFooter.vue"
-  import axios from 'axios';
+  import AppHeader from "./components/AppHeader.vue";
+  import AppMain from "./components/AppMain.vue";
+  import AppFooter from "./components/AppFooter.vue";
   import { store } from './store.js';
+  import axios from 'axios';
 
   export default {
     data() {
@@ -18,20 +18,10 @@
       AppFooter
     },
     methods: {
+      
     },
     mounted() {
-      axios
-        .get(this.store.baseUrl)
-        .then((response)=> {
-          console.log('api response: ', response);
-          this.store.cards = response.data.data;
-        }),
-      axios
-        .get(this.store.archetypesUrl)
-        .then((response)=> {
-          console.log('api archetype response: ', response);
-          this.store.archetypes = response.data;
-        })
+      
     },
   }
 </script>
