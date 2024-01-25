@@ -9,6 +9,8 @@
 
 body {
     background-color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 30px;
 }
 
 
@@ -16,21 +18,27 @@ body {
 
 #header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     color: white;
     background-color: black;
 
-    .logo {
-        color: red;
-        font-size: large;
-        cursor: pointer;
+    .navbar-logo-container {
+        display: flex; 
+        align-items: center;
+
+
+        .logo {
+            width: 150px;
+            color: red;
+            font-size: large;
+            cursor: pointer;
+        }
     }
 
     .search-bar {
         display: flex;
         gap: 10px;
-        padding: 30px;
 
         input {
             padding: 5px;
@@ -60,25 +68,57 @@ body {
 
     .singleapp-container {
 
+        margin: 15px;
+        color: white;
+
         .content-container {
+            text-align: center;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             gap: 20px;
-            //width: calc((100% / 4) - 20px);
+            padding: 0;
 
             .card {
-                max-width: 300px;
-                height: 500px;
-                background-color: rgb(0, 89, 255);
+                width: calc((100% / 4) - 20px);
                 color: white;
+                position: relative;
 
                 .poster-container {
-                    width: 150px;
+                    width: 100%;
                 }
 
-                .flag-container {
-                    width: 80px;
+                .info-movie {
+                    position: absolute;
+                    top: 50%;
+                    bottom: 0;
+                    //backdrop-filter: blur(3px);
+                    //transition: 3s ease-in-out;
+                    background-color: #3f494c91;
+                    display: none;
+
+                    .flag-container {
+                        width: 50px;
+                        height: 50px;
+                        display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                }
+            }
+            .card:hover {
+                transition: 3s ease-in-out;
+
+                .info-movie {
+                    display: block;
+
+                    .flag-container {
+                        width: 50px;
+                        height: 50px;
+                        display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
                 }
             }
         }
@@ -96,5 +136,4 @@ body {
 
 
 // FOOTER STYLE 
-
 

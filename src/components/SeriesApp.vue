@@ -48,33 +48,40 @@ export default {
 
   <div class="singleapp-container">
 
-    <h1>
-    SERIES
-    </h1>
+    <div class="d-flex align-items-center">
+      <h1 class="me-3">
+        Tv Shows 
+      </h1>
+      <span>
+       <i class="fa-solid fa-chevron-right fa-beat fa-lg" style="color: #ffffff;"></i>
+      </span>
+    </div>
 
     <ul class="content-container">
       <li class="card" v-for="(serie, index) in store.series" :key="index">
         <div class="poster-container">
           <img :src="seriePoster(serie.poster_path)" :alt="serie.poster_path">
         </div>
-        <div>
-          La serie è {{ serie.name }}
-        </div>
-        <div>
-         Il titolo originale è {{ serie.original_name }}
-        </div>
-        <div class="flag-container">
-          <img :src="getFlag(serie.original_language)" :alt="serie.original_language">
-        </div>
-        <div>
-          Il voto per questo film è:
-          <i v-for="star in 5" class="fa-star" 
-            :class="{ 
-            'fa-solid': star <= parseInt(serie.vote_average / 2), 
-            'fa-regular': star > parseInt(serie.vote_average / 2) 
-            }"
-            style="color: #ffff00;">
-          </i>
+        <div class="info-movie">
+          <h4>
+            {{ serie.name }}
+          </h4>
+          <h6>
+            {{ serie.original_name }}
+          </h6>
+          <div class="flag-container">
+            <img :src="getFlag(serie.original_language)" :alt="serie.original_language">
+          </div>
+          <div>
+            Rating:
+            <i v-for="star in 5" class="fa-star" 
+              :class="{ 
+              'fa-solid': star <= parseInt(serie.vote_average / 2), 
+              'fa-regular': star > parseInt(serie.vote_average / 2) 
+              }"
+              style="color: #ffff00;">
+            </i>
+          </div>
         </div>
       </li>
     </ul>

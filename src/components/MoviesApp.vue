@@ -46,33 +46,40 @@ export default {
 <template>
   <div class="singleapp-container">
 
-    <h1>
-      MOVIES  
-    </h1>
+    <div class="d-flex align-items-center">
+      <h1 class="me-3">
+        Movies  
+      </h1>
+      <span>
+       <i class="fa-solid fa-chevron-right fa-beat fa-lg" style="color: #ffffff;"></i>
+      </span>
+    </div>
 
     <ul class="content-container">
       <li class="card" v-for="(movie, index) in store.movies" key="index">
         <div class="poster-container">
           <img :src="moviePoster(movie.poster_path)" :alt="movie.poster_path">
         </div>
-       <div>
-          Il film è {{ movie.title }}
-        </div>
-        <div>
-         Il titolo originale è {{ movie.original_title }}
-       </div>
-        <div class="flag-container">
-          <img :src="getFlag(movie.original_language)" :alt="movie.original_language">
-        </div>
-        <div>
-          Il voto per questo film è {{ parseInt((movie.vote_average)/2) }}
-          <i v-for="star in 5" class="fa-star" 
-            :class="{ 
-            'fa-solid': star <= parseInt(movie.vote_average / 2), 
-            'fa-regular': star > parseInt(movie.vote_average / 2) 
-            }"
-            style="color: #ffff00;">
-          </i>
+        <div class="info-movie">
+          <h3>
+            {{ movie.title }}
+          </h3>
+         <h5>
+          {{ movie.original_title }}
+         </h5>
+          <div class="flag-container">
+            <img :src="getFlag(movie.original_language)" :alt="movie.original_language">
+          </div>
+          <div>
+            Rating:
+           <i v-for="star in 5" class="fa-star" 
+             :class="{ 
+             'fa-solid': star <= parseInt(movie.vote_average / 2), 
+             'fa-regular': star > parseInt(movie.vote_average / 2) 
+              }"
+              style="color: #ffff00;">
+           </i>
+          </div>
         </div>
       </li>
     </ul>

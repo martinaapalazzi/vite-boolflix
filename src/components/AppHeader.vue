@@ -21,6 +21,7 @@ import { store } from '../store.js';
       .then((response)=> {
         this.store.movies = response.data.results
         console.log(this.store.movies)
+        this.store.search = ''
       })
 
       axios
@@ -33,6 +34,7 @@ import { store } from '../store.js';
       .then((response)=>{
         this.store.series = response.data.results
         console.log(this.store.series)
+        this.store.search = ''
       })
       }
     },
@@ -42,8 +44,38 @@ import { store } from '../store.js';
 <template>
 
   <div id="header">
-    <div class="logo">
-      BOOLFLIX 
+    <div class="navbar-logo-container">
+      <div class="logo">
+        <img src="/src/assets/NetflixLogo.png" :alt="NetflixLogo"> 
+      </div>
+      <div>
+        <nav>
+          <div class="navbar-nav">
+            <div class="d-flex">
+              <li class="nav-item ms-3 me-3">
+                <a class="nav-link active" aria-current="page" href="#">
+                  Home
+                </a>
+              </li>
+              <li class="nav-item me-3">
+                <a class="nav-link active" aria-current="page" href="#">
+                  Movies
+                </a>
+              </li>
+              <li class="nav-item me-3">
+                <a class="nav-link active" aria-current="page" href="#">
+                 Tv Shows
+                </a>
+              </li>
+              <li class="nav-item me-3">
+                <a class="nav-link active" aria-current="page" href="#">
+                  My List
+                </a>
+              </li>
+            </div>
+          </div>
+        </nav>
+      </div>
     </div>
     <div class="search-bar">
       <div>
