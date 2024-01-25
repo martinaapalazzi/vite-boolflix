@@ -27,6 +27,13 @@ export default {
         flagLink += '.svg';
 
         return flagLink;
+      },
+      moviePoster: function (poster) {
+        let posterLink = 'https://image.tmdb.org/t/p/w1920';
+        posterLink +=  ;
+
+        return posterLink;
+
       }
 
     },
@@ -42,6 +49,9 @@ export default {
   <h1>MOVIES</h1>
   <ul>
     <li v-for="(movie, index) in store.movies" key="index">
+      <div class="poster-container">
+        <img :src="" alt="">
+      </div>
       <div>
         Il film è {{ movie.title }}
       </div>
