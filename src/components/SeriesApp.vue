@@ -9,6 +9,26 @@ export default {
         store
       }
     },
+    methods: {
+      getFlag: function (language) {
+
+        let flagLink= 'https://flagicons.lipis.dev/flags/4x3/';
+
+        if (language == 'en') {
+          flagLink += 'gb';
+        }
+        else if (language == 'ja') {
+          flagLink += 'jp';
+        }
+        else {
+          flagLink += language;
+        }
+
+        flagLink += '.svg';
+
+        return flagLink;
+      }
+    },
     props: {
       
     }
@@ -18,22 +38,26 @@ export default {
 
 <template>
 
-  <div>
-    <div v-for="(serie, index) in store.series" key="index">
-      <span>
+  <h1>SERIES</h1>
+
+  <ul>
+    <li v-for="(serie, index) in store.series" :key="index">
+      <div>
         La serie è {{ serie.name }}
-      </span>
-      <span>
+      </div>
+      <div>
         Il titolo originale è {{ serie.original_name }}
-      </span>
-      <span>
-        La lingua originale è {{ serie.original_language }}
-      </span>
-      <span>
+      </div>
+      <div>
+        bandiera: {{ serie.original_language }}
+        <img :src="GetFlag(serie.original_language)" :alt="serie.original_language">
+      </div>
+      <div>
         Il voto per questo film è {{ serie.vote_average }}
-      </span>
-    </div>
-  </div>
+      </div>
+      <hr>
+    </li>
+  </ul>
 
 </template>
 
