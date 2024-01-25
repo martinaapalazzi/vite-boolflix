@@ -29,10 +29,11 @@ export default {
         return flagLink;
       },
       moviePoster: function (poster) {
-        let posterLink = 'https://image.tmdb.org/t/p/w1920';
-        posterLink +=  ;
+      let posterLink = 'https://image.tmdb.org/t/p/w500';
+      
+      posterLink += poster;
 
-        return posterLink;
+      return posterLink;
 
       }
 
@@ -50,7 +51,7 @@ export default {
   <ul>
     <li v-for="(movie, index) in store.movies" key="index">
       <div class="poster-container">
-        <img :src="" alt="">
+        <img :src="moviePoster(movie.poster_path)" :alt="movie.poster_path">
       </div>
       <div>
         Il film è {{ movie.title }}
@@ -77,6 +78,10 @@ export default {
 
 .flag-container {
   width: 80px;
+}
+
+.poster-container {
+  width: 100px;
 }
 
 </style>
