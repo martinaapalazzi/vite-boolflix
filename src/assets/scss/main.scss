@@ -7,6 +7,10 @@
 
 // GENERAL
 
+body {
+    background-color: black;
+}
+
 
 // HEADER STYLE 
 
@@ -53,6 +57,34 @@
 // MAIN STYLE
 
 #main {
+
+    .singleapp-container {
+
+        .content-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+            //width: calc((100% / 4) - 20px);
+
+            .card {
+                max-width: 300px;
+                height: 500px;
+                background-color: rgb(0, 89, 255);
+                color: white;
+
+                .poster-container {
+                    width: 150px;
+                }
+
+                .flag-container {
+                    width: 80px;
+                }
+            }
+        }
+    }
+
+    
 
     
 

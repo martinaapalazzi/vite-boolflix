@@ -20,9 +20,13 @@
 
 <template>
 
-  <MoviesApp />
+  <div id="main">
 
-  <SeriesApp />
+    <MoviesApp />
+    <SeriesApp />
+
+  </div>
+
 
 
 </template>

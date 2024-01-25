@@ -46,29 +46,40 @@ export default {
 
 <template>
 
-  <h1>SERIES</h1>
+  <div class="singleapp-container">
 
-  <ul>
-    <li v-for="(serie, index) in store.series" :key="index">
-      <div class="poster-container">
-        <img :src="seriePoster(serie.poster_path)" :alt="serie.poster_path">
-      </div>
-      <div>
-        La serie è {{ serie.name }}
-      </div>
-      <div>
-        Il titolo originale è {{ serie.original_name }}
-      </div>
-      <div class="flag-container">
-        bandiera: {{ serie.original_language }}
-        <img :src="getFlag(serie.original_language)" :alt="serie.original_language">
-      </div>
-      <div>
-        Il voto per questo film è {{ parseInt((serie.vote_average)/2) }}
-      </div>
-      <hr>
-    </li>
-  </ul>
+    <h1>
+    SERIES
+    </h1>
+
+    <ul class="content-container">
+      <li class="card" v-for="(serie, index) in store.series" :key="index">
+        <div class="poster-container">
+          <img :src="seriePoster(serie.poster_path)" :alt="serie.poster_path">
+        </div>
+        <div>
+          La serie è {{ serie.name }}
+        </div>
+        <div>
+         Il titolo originale è {{ serie.original_name }}
+        </div>
+        <div class="flag-container">
+          <img :src="getFlag(serie.original_language)" :alt="serie.original_language">
+        </div>
+        <div>
+          Il voto per questo film è:
+          <i v-for="star in 5" class="fa-star" 
+            :class="{ 
+            'fa-solid': star <= parseInt(serie.vote_average / 2), 
+            'fa-regular': star > parseInt(serie.vote_average / 2) 
+            }"
+            style="color: #ffff00;">
+          </i>
+        </div>
+      </li>
+    </ul>
+
+  </div>
 
 </template>
 
