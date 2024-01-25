@@ -27,6 +27,14 @@ export default {
         flagLink += '.svg';
 
         return flagLink;
+      },
+      seriePoster: function (poster) {
+      let posterLink = 'https://image.tmdb.org/t/p/w342';
+      
+      posterLink += poster;
+
+      return posterLink;
+
       }
     },
     props: {
@@ -42,6 +50,9 @@ export default {
 
   <ul>
     <li v-for="(serie, index) in store.series" :key="index">
+      <div class="poster-container">
+        <img :src="seriePoster(serie.poster_path)" :alt="serie.poster_path">
+      </div>
       <div>
         La serie è {{ serie.name }}
       </div>
@@ -53,7 +64,7 @@ export default {
         <img :src="getFlag(serie.original_language)" :alt="serie.original_language">
       </div>
       <div>
-        Il voto per questo film è {{ serie.vote_average }}
+        Il voto per questo film è {{ parseInt((serie.vote_average)/2) }}
       </div>
       <hr>
     </li>
@@ -64,6 +75,10 @@ export default {
 <style lang="scss" scoped>
 .flag-container {
   width: 80px;
+}
+
+.poster-container {
+  width: 100px;
 }
 
 </style>

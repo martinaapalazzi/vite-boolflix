@@ -29,14 +29,12 @@ export default {
         return flagLink;
       },
       moviePoster: function (poster) {
-      let posterLink = 'https://image.tmdb.org/t/p/w500';
+      let posterLink = 'https://image.tmdb.org/t/p/w342';
       
       posterLink += poster;
 
       return posterLink;
-
-      }
-
+      },
     },
     props: {
       
@@ -64,9 +62,18 @@ export default {
         <img :src="getFlag(movie.original_language)" :alt="movie.original_language">
       </div>
       <div>
-        Il voto per questo film è {{ movie.vote_average }}
+        Il voto per questo film è {{ parseInt((movie.vote_average)/2) }}
+        <i v-for="star in 5" class="fa-star" 
+          :class="{ 
+          'fa-solid': star <= parseInt(movie.vote_average / 2), 
+          'fa-regular': star > parseInt(movie.vote_average / 2) 
+          }" style="color: #ffff00;">
+        </i>
       </div>
       <hr>
+      <div :class="getStar()">
+
+      </div>
     </li>
   </ul>
   <br>
