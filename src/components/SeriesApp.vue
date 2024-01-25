@@ -48,9 +48,9 @@ export default {
       <div>
         Il titolo originale è {{ serie.original_name }}
       </div>
-      <div>
+      <div class="flag-container">
         bandiera: {{ serie.original_language }}
-        <img :src="GetFlag(serie.original_language)" :alt="serie.original_language">
+        <img :src="getFlag(serie.original_language)" :alt="serie.original_language">
       </div>
       <div>
         Il voto per questo film è {{ serie.vote_average }}
@@ -62,6 +62,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-
+.flag-container {
+  width: 80px;
+}
 
 </style>
