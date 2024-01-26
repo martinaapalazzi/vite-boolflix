@@ -63,21 +63,21 @@ export default {
           <img :src="seriePoster(serie.poster_path)" :alt="serie.poster_path">
         </div>
         <div class="info-movie">
-          <h4>
-            {{ serie.name }}
-          </h4>
           <h6>
-            {{ serie.original_name }}
+            {{ serie.name }}
           </h6>
+          <p>
+            {{ serie.original_name }}
+          </p>
           <div class="flag-container">
             <img :src="getFlag(serie.original_language)" :alt="serie.original_language">
           </div>
           <div>
             Rating:
-            <i v-for="star in 5" class="fa-star" 
+             <i v-for="star in 5" class="fa-star" 
               :class="{ 
-              'fa-solid': star <= parseInt(serie.vote_average / 2), 
-              'fa-regular': star > parseInt(serie.vote_average / 2) 
+              'fa-solid': star <= Math.ceil(serie.vote_average / 2), 
+              'fa-regular': star > Math.ceil(serie.vote_average / 2) 
               }"
               style="color: #ffff00;">
             </i>

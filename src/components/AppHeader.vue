@@ -46,7 +46,7 @@ import { store } from '../store.js';
   <div id="header">
     <div class="navbar-logo-container">
       <div class="logo">
-        <img src="/src/assets/NetflixLogo.png" :alt="NetflixLogo"> 
+        <img src="/src/assets/NetflixLogo.png" alt="NetflixLogo"> 
       </div>
       <div>
         <nav>

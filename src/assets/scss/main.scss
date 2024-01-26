@@ -26,7 +26,7 @@ body {
     .navbar-logo-container {
         display: flex; 
         align-items: center;
-
+        color: grey;
 
         .logo {
             width: 150px;
@@ -34,6 +34,10 @@ body {
             font-size: large;
             cursor: pointer;
         }
+    }
+
+    .navbar-logo-container a:hover {
+        color: white
     }
 
     .search-bar {
@@ -90,16 +94,14 @@ body {
 
                 .info-movie {
                     position: absolute;
-                    top: 50%;
+                    top: 20%;
                     bottom: 0;
-                    //backdrop-filter: blur(3px);
-                    //transition: 3s ease-in-out;
                     background-color: #3f494c91;
                     display: none;
 
                     .flag-container {
-                        width: 50px;
-                        height: 50px;
+                        width: 40px;
+                        height: 40px;
                         display: block;
                         margin-left: auto;
                         margin-right: auto;
@@ -107,18 +109,12 @@ body {
                 }
             }
             .card:hover {
+                //backdrop-filter: blur(3px);
                 transition: 3s ease-in-out;
 
                 .info-movie {
                     display: block;
 
-                    .flag-container {
-                        width: 50px;
-                        height: 50px;
-                        display: block;
-                        margin-left: auto;
-                        margin-right: auto;
-                    }
                 }
             }
         }
