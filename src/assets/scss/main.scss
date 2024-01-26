@@ -93,15 +93,17 @@ body {
                 }
 
                 .info-movie {
+                    width: 100%;
                     position: absolute;
-                    top: 20%;
+                    top: 0;
                     bottom: 0;
                     background-color: #3f494c91;
+                    padding: 10px;
                     display: none;
 
                     .flag-container {
-                        width: 40px;
-                        height: 40px;
+                        width: 30px;
+                        height: 30px;
                         display: block;
                         margin-left: auto;
                         margin-right: auto;

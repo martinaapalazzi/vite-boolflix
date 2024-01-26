@@ -61,12 +61,12 @@ export default {
           <img :src="moviePoster(movie.poster_path)" :alt="movie.poster_path">
         </div>
         <div class="info-movie">
-          <h4>
-             Title: {{ movie.title }}
-          </h4>
-         <p>
-          {{ movie.original_title }}
-         </p>
+          <h5>
+              {{ movie.title }}
+          </h5>
+          <p>
+            {{ movie.original_title }}
+          </p>
           <div class="flag-container">
             <img :src="getFlag(movie.original_language)" :alt="movie.original_language">
           </div>
